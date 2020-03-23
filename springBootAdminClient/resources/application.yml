@@ -1,0 +1,25 @@
+server:
+  port: 8666
+spring:
+  boot:
+    admin:
+      client:
+        # server地址
+        url: http://localhost:8888
+        instance:
+          #client地址
+          service-base-url: http://localhost:${server.port}
+  application:
+    name: sbAdminClient
+ 
+#Actuator配置：暴露敏感路径，默认情况下，敏感路径并不暴露
+management:
+  endpoints:
+    web:
+      exposure:
+        # 暴露xxx端点，如需暴露多个，用,分隔；如需暴露所有端点，用'*'
+        include: "*"
+  endpoint:
+    health:
+      # 是否展示健康检查详情
+      show-details: ALWAYS

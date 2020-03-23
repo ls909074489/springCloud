@@ -1,0 +1,29 @@
+server:
+  port: 8601 #服务访问端口
+  servlet:
+    context-path: / #访问路径
+spring:
+  application:
+    name: sb_EurekaClient #服务名
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #暴露所有节点
+    health:
+      sensitive: false #关闭过滤敏感信息
+  endpoint:
+    health:
+      show-details: ALWAYS  #显示详细信息
+eureka:
+  instance: #实例
+    prefer-ip-address: true #是否使用IP地址进行访问
+    #实例显示名
+    instanceId: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
+  client:
+    serviceUrl:
+      defaultZone: http://eurekaadmin:123456@127.0.0.1:8888/eureka/
+logging:
+    file: /application.log
+    pattern:
+      file: '%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx'

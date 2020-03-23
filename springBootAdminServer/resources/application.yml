@@ -1,0 +1,39 @@
+server:
+  port: 8999
+spring:
+  application:
+    name: sb_AdminServer
+  security:
+    user:
+      name: admin
+      password: 123456
+      roles: admin
+  boot:
+    admin:
+      ui:
+        title: 5180it
+eureka:
+  instance:
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+    easeRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    ip-address: 127.0.0.1
+    prefer-ip-address: true
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://eurekaadmin:123456@127.0.0.1:8888/eureka/
+ 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #暴露所有节点
+    health:
+      sensitive: false #关闭过滤敏感信息
+  endpoint:
+    health:
+      show-details: ALWAYS  #显示详细信息

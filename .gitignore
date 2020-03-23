@@ -21,3 +21,13 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
+
+target/**
+.settings/**
+**/.settings/**
+.classpath
+.project
+.gitignore
+**/.idea/**
+*.class
+springBootEurekaClient/target/**
