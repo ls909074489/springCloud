@@ -26,7 +26,7 @@ public class SpringBootAdminServerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootAdminServerApplication.class, args);
 	}
-
+	
 	
 	@Configuration
 	public class SecuritySecureConfig extends WebSecurityConfigurerAdapter {

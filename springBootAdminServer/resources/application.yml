@@ -2,7 +2,7 @@ server:
   port: 8999
 spring:
   application:
-    name: sb_AdminServer
+    name: sbAdminServer
   security:
     user:
       name: admin

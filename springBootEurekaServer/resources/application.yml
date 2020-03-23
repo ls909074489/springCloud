@@ -2,7 +2,7 @@ server:
   port: 8888
 spring:
   application:
-    name: sb_EurekaServer
+    name: sbEurekaServer
   security:
     user:
       name: eurekaadmin
