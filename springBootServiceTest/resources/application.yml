@@ -1,13 +1,10 @@
 server:
-  port: 8601 #服务访问端口
+  port: 8700 #服务访问端口
   servlet:
     context-path: / #访问路径
 spring:
   application:
-    name: sbEurekaClient #服务名
-feign:
-  hystrix:
-    enabled: true    
+    name: sbServices #服务名
 management:
   endpoints:
     web:
